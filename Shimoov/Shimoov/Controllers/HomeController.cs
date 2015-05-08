@@ -10,7 +10,7 @@ namespace Shimoov.Controllers
 	{
 		public ActionResult Index()
 		{
-			return View();
+			return Content("Home");
 		}
 
 		public ActionResult About()
