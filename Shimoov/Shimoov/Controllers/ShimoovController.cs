@@ -18,7 +18,7 @@ namespace Shimoov.Controllers
 		[HttpGet]
 		public ActionResult Query(string location, int salary, string destination)
 		{
-			throw new NotImplementedException();
+			return Content("Locaiton:" + location + "Salary:" + salary + "Destination" + destination);
 		}
 	}
 }
