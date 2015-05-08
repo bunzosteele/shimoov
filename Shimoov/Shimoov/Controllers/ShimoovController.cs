@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 
 namespace Shimoov.Controllers
 {
@@ -12,6 +13,12 @@ namespace Shimoov.Controllers
 		public ActionResult Test(int input)
 		{
 			return Content(input.ToString());
+		}
+
+		[HttpGet]
+		public ActionResult Query(string location, int salary, string destination)
+		{
+			throw new NotImplementedException();
 		}
 	}
 }
