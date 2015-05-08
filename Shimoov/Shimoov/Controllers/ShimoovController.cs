@@ -10,9 +10,9 @@ namespace Shimoov.Controllers
 		}
 
 		[HttpGet]
-		public ActionResult Test(int input)
+		public ActionResult Test(int id)
 		{
-			return Content(input.ToString());
+			return Content(id.ToString());
 		}
 
 		[HttpGet]

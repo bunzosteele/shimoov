@@ -16,10 +16,8 @@ namespace Shimoov
 			routes.MapRoute(
 				name: "Default",
 				url: "{controller}/{action}/{id}",
-				defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+				defaults: new { controller = "Home", action = "Inex", id = UrlParameter.Optional }
 			);
-
-			routes.MapRoute("ShimoovTest", "test/{input}", new { controller = "Shimoov", action = "Test" });
 		}
 	}
 }
