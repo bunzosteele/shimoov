@@ -34,7 +34,7 @@ namespace Shimoov.Controllers
 
 		private string queryWolfram(string input)
 		{
-			WolframAlpha wolfram = new WolframAlpha("ARQJPTG-976HAP24AX");
+			WolframAlpha wolfram = new WolframAlpha("RQJPTG-976HAP24AX");
 
 			QueryResult results = wolfram.Query("cost of living index " + input);
 
