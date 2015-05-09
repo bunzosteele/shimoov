@@ -54,6 +54,10 @@ namespace Shimoov.Controllers
 					}
 				}
 			}
+			else
+			{
+				result = "NULL";
+			}
 			return result;
 		}
 	}
