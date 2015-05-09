@@ -41,11 +41,13 @@ namespace Shimoov.Controllers
 			string result = "";
 			if (results != null)
 			{
+				result = "NOTNULL";
 				foreach (Pod pod in results.Pods)
 				{
-					Console.WriteLine(pod.Title);
+					result += "POD";
 					if (pod.SubPods != null)
 					{
+						result += "SUBPOD";
 						foreach (SubPod subPod in pod.SubPods)
 						{
 							result += subPod.Title + " ";
