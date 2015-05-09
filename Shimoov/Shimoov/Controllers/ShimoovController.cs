@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Runtime.Remoting.Messaging;
 using System.Web.Mvc;
-using Shimoov.Models;
+using WolframAlphaNET;
+using WolframAlphaNET.Objects;
 
 namespace Shimoov.Controllers
 {
@@ -20,18 +21,40 @@ namespace Shimoov.Controllers
 		[HttpGet]
 		public ActionResult Query(string location, int salary, string destination)
 		{
-            var dto = new RequestDTO() {
-                Location = location,
-                Salary = salary,
-                Destination = destination
-            };
-			return Content("133700");
+			var locationResult = queryWolfram(location);
+			var destinationResult = queryWolfram(destination);
+			return Content(locationResult + destinationResult);
 		}
 
-        private int salaryCalculation(int oldSalary, int coastOfLivingRatio, int newSalary)
-        {
-            int adjustedSalary = (oldSalary / coastOfLivingRatio) * newSalary;
-            return adjustedSalary;
-        }
+		private int salaryCalculation(int oldSalary, int coastOfLivingRatio, int newSalary)
+		{
+			int adjustedSalary = (oldSalary / coastOfLivingRatio) * newSalary;
+			return adjustedSalary;
+		}
+
+		private string queryWolfram(string input)
+		{
+			WolframAlpha wolfram = new WolframAlpha("APPID HERE");
+
+			QueryResult results = wolfram.Query("cost of living index " + input);
+
+			string result = "";
+			if (results != null)
+			{
+				foreach (Pod pod in results.Pods)
+				{
+					Console.WriteLine(pod.Title);
+					if (pod.SubPods != null)
+					{
+						foreach (SubPod subPod in pod.SubPods)
+						{
+							result += subPod.Title + " ";
+							result += subPod.Plaintext;
+						}
+					}
+				}
+			}
+			return result;
+		}
 	}
 }

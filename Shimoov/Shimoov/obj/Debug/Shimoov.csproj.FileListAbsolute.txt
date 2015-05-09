@@ -24,3 +24,8 @@ C:\Code\Shimoov\Shimoov\Shimoov\bin\Newtonsoft.Json.xml
 C:\Code\Shimoov\Shimoov\Shimoov\obj\Debug\Shimoov.csprojResolveAssemblyReference.cache
 C:\Code\Shimoov\Shimoov\Shimoov\obj\Debug\Shimoov.dll
 C:\Code\Shimoov\Shimoov\Shimoov\obj\Debug\Shimoov.pdb
+C:\Code\Shimoov\Shimoov\Shimoov\bin\RestSharp.dll
+C:\Code\Shimoov\Shimoov\Shimoov\bin\WolframAlpha.NET.dll
+C:\Code\Shimoov\Shimoov\Shimoov\bin\RestSharp.xml
+C:\Code\Shimoov\Shimoov\Shimoov\bin\WolframAlpha.NET.pdb
+C:\Code\Shimoov\Shimoov\Shimoov\bin\WolframAlpha.NET.xml
