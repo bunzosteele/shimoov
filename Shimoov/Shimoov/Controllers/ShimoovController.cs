@@ -23,7 +23,7 @@ namespace Shimoov.Controllers
 		{
 			var locationResult = queryWolfram(location);
 			var destinationResult = queryWolfram(destination);
-			return Content(locationResult + destinationResult);
+			return Content("BLARGH");
 		}
 
 		private int salaryCalculation(int oldSalary, int coastOfLivingRatio, int newSalary)
