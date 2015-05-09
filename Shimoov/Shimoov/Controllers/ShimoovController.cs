@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Remoting.Messaging;
 using System.Web.Mvc;
 
 namespace Shimoov.Controllers
@@ -18,7 +19,7 @@ namespace Shimoov.Controllers
 		[HttpGet]
 		public ActionResult Query(string location, int salary, string destination)
 		{
-			return Content("Locaiton:" + location + "Salary:" + salary + "Destination" + destination);
+			return Content("133700");
 		}
 	}
 }
