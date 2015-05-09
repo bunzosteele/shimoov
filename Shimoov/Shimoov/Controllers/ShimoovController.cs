@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.Remoting.Messaging;
 using System.Web.Mvc;
+using Shimoov.Models;
 
 namespace Shimoov.Controllers
 {
@@ -19,7 +20,18 @@ namespace Shimoov.Controllers
 		[HttpGet]
 		public ActionResult Query(string location, int salary, string destination)
 		{
+            var dto = new RequestDTO() {
+                Location = location,
+                Salary = salary,
+                Destination = destination
+            };
 			return Content("133700");
 		}
+
+        private int salaryCalculation(int oldSalary, int coastOfLivingRatio, int newSalary)
+        {
+            int adjustedSalary = (oldSalary / coastOfLivingRatio) * newSalary;
+            return adjustedSalary;
+        }
 	}
 }
