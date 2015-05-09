@@ -20,7 +20,7 @@ namespace Shimoov
 			);
 			routes.MapRoute(
 				name: "Query",
-				url: "{controller}/{action}/location={location}&salary={salary}&destination={destination}",
+				url: "{controller}/{action}/{location}/{salary}/{destination}",
 				defaults: new { controller = "Home", action = "Inex", id = UrlParameter.Optional }
 );
 		}
