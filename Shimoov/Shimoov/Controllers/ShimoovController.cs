@@ -43,16 +43,19 @@ namespace Shimoov.Controllers
 			{
 				result = "NOTNULL";
 				result += results.Error.Message;
-				foreach (Pod pod in results.Pods)
+				if (results.Pods != null)
 				{
-					result += "POD";
-					if (pod.SubPods != null)
+					foreach (Pod pod in results.Pods)
 					{
-						result += "SUBPOD";
-						foreach (SubPod subPod in pod.SubPods)
+						result += "POD";
+						if (pod.SubPods != null)
 						{
-							result += subPod.Title + " ";
-							result += subPod.Plaintext;
+							result += "SUBPOD";
+							foreach (SubPod subPod in pod.SubPods)
+							{
+								result += subPod.Title + " ";
+								result += subPod.Plaintext;
+							}
 						}
 					}
 				}
