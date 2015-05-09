@@ -42,6 +42,7 @@ namespace Shimoov.Controllers
 			if (results != null)
 			{
 				result = "NOTNULL";
+				result += results.Error.Message;
 				foreach (Pod pod in results.Pods)
 				{
 					result += "POD";
