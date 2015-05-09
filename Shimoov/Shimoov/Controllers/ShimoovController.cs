@@ -35,14 +35,14 @@ namespace Shimoov.Controllers
 		private string queryWolfram(string input)
 		{
 			WolframAlpha wolfram = new WolframAlpha("RQJPTG-976HAP24AX");
-
 			QueryResult results = wolfram.Query("cost of living index " + input);
 
 			string result = "";
 			if (results != null)
 			{
 				result = "NOTNULL";
-				result += results.Error.Message;
+				if (results.Error != null)
+					result += results.Error.Message;
 				if (results.Pods != null)
 				{
 					foreach (Pod pod in results.Pods)
