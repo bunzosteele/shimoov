@@ -23,7 +23,7 @@ namespace Shimoov.Controllers
 		{
 			var locationResult = queryWolfram(location);
 			var destinationResult = queryWolfram(destination);
-			return Content("BLARGH");
+			return Content(locationResult);
 		}
 
 		private int salaryCalculation(int oldSalary, int coastOfLivingRatio, int newSalary)
@@ -34,7 +34,7 @@ namespace Shimoov.Controllers
 
 		private string queryWolfram(string input)
 		{
-			WolframAlpha wolfram = new WolframAlpha("APPID HERE");
+			WolframAlpha wolfram = new WolframAlpha("ARQJPTG-976HAP24AX");
 
 			QueryResult results = wolfram.Query("cost of living index " + input);
 
